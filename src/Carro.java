@@ -1,7 +1,7 @@
 public abstract class Carro {
-    private String modelo;
-    private int ano;
-    private String cor;
+    public String modelo;
+    public int ano;
+    public String cor;
 
 
     public Carro(String modelo, int ano, String cor) {
@@ -38,12 +38,4 @@ public abstract class Carro {
         this.cor = cor;
     }
 
-    @Override
-    public String toString() {
-        return "Carro{" +
-                "modelo='" + modelo + '\'' +
-                ", ano=" + ano +
-                ", cor='" + cor + '\'' +
-                '}';
-    }
 }

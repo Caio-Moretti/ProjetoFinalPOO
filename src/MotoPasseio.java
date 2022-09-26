@@ -14,4 +14,15 @@ public class MotoPasseio extends Moto{
     public void setVelocidade_maxima(int velocidade_maxima) {
         this.velocidade_maxima = velocidade_maxima;
     }
+
+
+    @Override
+    public String toString() {
+        return "Inner.MotoPasseio{ " +
+                "velocidadeMaxima='" + velocidade_maxima + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", ano=" + ano +
+                ", cor='" + cor + '\'' +
+                '}';
+    }
 }

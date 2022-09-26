@@ -1,71 +1,83 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 
 public class Principal {
+    public static void setForCar(int assentos, CarroPasseio carroPasseio) {
+        try {
+            carroPasseio.setAssentos(assentos);
+        } catch(IllegalSeatException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
 
+//        try {
+//            BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+//            writer.write("funcionou");
+//            writer.close();
+//        } catch(IOException e){
+//            e.printStackTrace();
+//        }
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader("entradas/entrada1.txt"));
             String l;
-            ArrayList<Carro> garagem = new ArrayList<Carro>();
+            ArrayList<Carro> garagemCarros = new ArrayList<Carro>();
             for (int i = 0; i < 4; i++) {
                 l = reader.readLine();
                 if (l == null) break;
                 ArrayList<String> info = new ArrayList<String>(Arrays.asList(l.split(",")));
                 if(i==0) {
                     CarroEsportivo carroDoAguiar = new CarroEsportivo(info.get(0), Integer.parseInt(info.get(1)), info.get(2), info.get(3), Double.parseDouble(info.get(4)));
-                    garagem.add(carroDoAguiar);
+                    garagemCarros.add(carroDoAguiar);
                 } else if (i==1) {
                     CarroEsportivo carroDoCaio = new CarroEsportivo(info.get(0), Integer.parseInt(info.get(1)), info.get(2), info.get(3), Double.parseDouble(info.get(4)));
-                    garagem.add(carroDoCaio);
+                    garagemCarros.add(carroDoCaio);
                 } else if (i==2){
                     CarroPasseio carroReservaAguiar = new CarroPasseio(info.get(0), Integer.parseInt(info.get(1)), info.get(2), Integer.parseInt(info.get(3)));
-                    garagem.add(carroReservaAguiar);
+                    garagemCarros.add(carroReservaAguiar);
                 } else {
                     CarroPasseio carroReservaCaio = new CarroPasseio(info.get(0), Integer.parseInt(info.get(1)), info.get(2), Integer.parseInt(info.get(3)));
-                    garagem.add(carroReservaCaio);
+                    garagemCarros.add(carroReservaCaio);
                 }
             }
-            garagem.get(0).freiar();
+            System.out.println(garagemCarros);
             reader.close();
-        } catch (IOException e) {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("entradas/entrada2.txt"));
+            String linha;
+            ArrayList<Moto> garagemMotos = new ArrayList<Moto>();
+            for (int i = 0; i < 4; i++) {
+                linha = reader.readLine();
+                if (linha == null) break;
+                ArrayList<String> info = new ArrayList<String>(Arrays.asList(linha.split(",")));
+                if(i==0) {
+                    MotoEsportiva motoDoAguiar = new MotoEsportiva(info.get(0), Integer.parseInt(info.get(1)), info.get(2), info.get(3), Double.parseDouble(info.get(4)));
+                    garagemMotos.add(motoDoAguiar);
+                } else if (i==1) {
+                    MotoEsportiva  motoDoCaio = new MotoEsportiva(info.get(0), Integer.parseInt(info.get(1)), info.get(2), info.get(3), Double.parseDouble(info.get(4)));
+                    garagemMotos.add(motoDoCaio);
+                } else if (i==2){
+                    MotoPasseio  motoReservaCaio = new MotoPasseio(info.get(0), Integer.parseInt(info.get(1)), info.get(2),Integer.parseInt(info.get(3)));
+                    garagemMotos.add(motoReservaCaio);
+                } else {
+                    MotoPasseio  motoReservaCaio = new MotoPasseio(info.get(0), Integer.parseInt(info.get(1)), info.get(2), Integer.parseInt(info.get(3)));
+                    garagemMotos.add(motoReservaCaio);
+                }
+            }
+            System.out.println(garagemMotos);
+            reader.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        CarroEsportivo carro_do_aguiar = new CarroEsportivo("Ferrari Spider", 2020, "amarelo","Mercedes", 3.0);
-//        MotoPasseio moto_do_aguiar = new MotoPasseio("Pop100", 2019, "Verde", 200);
-//
-//        CarroPasseio carro_do_caio = new CarroPasseio("Toyota Corolla", 2021, "Prata", 5);
-//        MotoEsportiva moto_do_caio = new MotoEsportiva("Kawasaki Ninja", 2018, "Vermelha", "Fiat", 1.0);
-//
-//        System.out.println(carro_do_aguiar.getCapacidade());
-//        System.out.println(carro_do_aguiar.getMarcaMotor());
-//        System.out.println(moto_do_caio.getCapacidade());
-//        System.out.println(moto_do_caio.getMarcaMotor());
-//        System.out.println(carro_do_aguiar);
-//        System.out.println(moto_do_aguiar);
-//        System.out.println(carro_do_caio);
-//        System.out.println(moto_do_caio);

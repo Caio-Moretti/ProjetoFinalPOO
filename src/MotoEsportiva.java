@@ -18,4 +18,15 @@ public class MotoEsportiva extends Moto implements Motor{
     public double getCapacidade() {
         return capacidade;
     }
+
+    @Override
+    public String toString() {
+        return "Inner.MotoEsportiva{ " +
+                "marca_motor='" + marca_motor + '\'' +
+                ", capacidade=" + capacidade +
+                ", modelo='" + modelo + '\'' +
+                ", ano=" + ano +
+                ", cor='" + cor + '\'' +
+                '}';
+    }
 }

@@ -1,7 +1,7 @@
 public abstract class Moto {
-    private String modelo;
-    private int ano;
-    private String cor;
+    public String modelo;
+    public int ano;
+    public String cor;
 
 
     public Moto(String modelo, int ano, String cor) {

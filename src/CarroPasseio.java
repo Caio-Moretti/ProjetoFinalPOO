@@ -11,7 +11,21 @@ public class CarroPasseio extends Carro{
         return assentos;
     }
 
-    public void setAssentos(int assentos) {
+    public void setAssentos(int assentos) throws IllegalSeatException {
+        if(assentos < 3) {
+            throw new IllegalSeatException("Menos que tres assentos nao pode :(");
+        }
+
         this.assentos = assentos;
+    }
+
+    @Override
+    public String toString() {
+        return "Inner.CarroPasseio{ " +
+                "assentos='" + assentos + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", ano=" + ano +
+                ", cor='" + cor + '\'' +
+                '}';
     }
 }
