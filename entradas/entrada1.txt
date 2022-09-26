@@ -1,0 +1,4 @@
+Ferrari Spider,2020,amarelo,Mercedes,3.0
+Lamborghini Gallardo,2021,vermelho,Volkswagen,2.6
+Siena,2001,Cinza,5
+Gol,2005,Vermelho,5
