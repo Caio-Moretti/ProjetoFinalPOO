@@ -1,0 +1,5 @@
+Ano de Fabricação da primeira moto: 2020
+Ano de Fabricação da segunda moto: 2021
+Ano de Fabricação da terceira moto: 2012
+Ano de Fabricação da quarta moto: 2010
+Ano da Moto mais nova: 2021
