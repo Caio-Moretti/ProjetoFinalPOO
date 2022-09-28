@@ -26,7 +26,7 @@ public class Principal {
                     CarroEsportivo carroEsportivo = new CarroEsportivo(info.get(1).trim(), Integer.parseInt(info.get(2).trim()), info.get(3).trim(), info.get(4).trim(), Double.parseDouble(info.get(5).trim()));
                     garagemCarros.add(carroEsportivo);
                 }else {
-                    CarroPasseio carroPasseio = new CarroPasseio(info.get(1), Integer.parseInt(info.get(2)), info.get(3), Integer.parseInt(info.get(4)));
+                    CarroPasseio carroPasseio = new CarroPasseio(info.get(1).trim(), Integer.parseInt(info.get(2).trim()), info.get(3).trim(), Integer.parseInt(info.get(4).trim()));
                     garagemCarros.add(carroPasseio);
                 }
             }
@@ -72,7 +72,7 @@ public class Principal {
                     MotoEsportiva motoEsportiva = new MotoEsportiva(info.get(1).trim(), Integer.parseInt(info.get(2).trim()), info.get(3).trim(), info.get(4).trim(), Double.parseDouble(info.get(5).trim()));
                     garagemMotos.add(motoEsportiva);
                 } else {
-                    MotoPasseio  motoPasseio = new MotoPasseio(info.get(1), Integer.parseInt(info.get(2)), info.get(3),Integer.parseInt(info.get(4)));
+                    MotoPasseio  motoPasseio = new MotoPasseio(info.get(1).trim(), Integer.parseInt(info.get(2).trim()), info.get(3).trim(),Integer.parseInt(info.get(4).trim()));
                     garagemMotos.add(motoPasseio);
                 }
             }
