@@ -45,16 +45,25 @@ public class Principal {
                 }
             }
             System.out.println(garagemCarros);
-            int anoCarro0 = garagemCarros.get(0).getAno();
-            int anoCarro1 = garagemCarros.get(1).getAno();
-            int anoCarro2 = garagemCarros.get(2).getAno();
-            int anoCarro3 = garagemCarros.get(3).getAno();
-            int media = (anoCarro0 + anoCarro1 + anoCarro2 + anoCarro3)/4;
-            writer.write(String.format("Ano de Fabricação do primeiro carro: %d" +
-                    "\nAno de Fabricação do segundo carro: %d" +
-                    "\nAno de Fabricação do terceiro carro: %d" +
-                    "\nAno de Fabricação do quarto carro: %d" +
-                    "\nMédia de idade entre os carros: %d",anoCarro0, anoCarro1, anoCarro2, anoCarro3, media)); // Escreve na pasta resultado1.txt
+
+
+            // media = sum(ArrayList)/count(ArrayList)
+            ArrayList<Integer> idadesCarros = new ArrayList<>();
+
+            for (int i = 0; i < quantLinhas1; i++) {
+                idadesCarros.add((garagemCarros.get(i).getAno()));
+                writer.write(String.format("Ano de fabricação do %dº carro: %d\n", (i+1), idadesCarros.get(i)));
+            }
+            int sum = 0;
+            int i;
+
+            for (i = 0; i < idadesCarros.size(); i++) {
+                sum += idadesCarros.get(i);
+            }
+
+            int media = sum/idadesCarros.size();
+            writer.write(String.format("A média de idade dos carros é %d", media));
+
             writer.close();
             reader.close();
 
