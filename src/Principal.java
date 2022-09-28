@@ -1,10 +1,9 @@
 //TEMÁTICA: MINHA GARAGEM (Carros e Motos)
-//COMO USAR OS ARQUIVOS ENTRADA:
+//CCOMO USAR OS ARQUIVOS ENTRADA:
 // CarroEsportivo: Atributos: a1,a2,a3 (Com vírgula sem espaço)
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 
 public class Principal {
     public static void setForCar(int assentos, CarroPasseio carroPasseio) {
@@ -17,6 +16,7 @@ public class Principal {
 
     public static void main(String[] args) {
 
+        // conta as linhas do arquivo entrada1.txt
         long quantLinhas1 = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader("entrada1.txt"))) {
             while (reader.readLine() != null) quantLinhas1++;
@@ -24,13 +24,14 @@ public class Principal {
             e.printStackTrace();
         }
 
+
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("entrada1.txt"));
-            BufferedWriter writer = new BufferedWriter(new FileWriter("resultado1.txt")); // Define uma pasta txt a ser criada
+            BufferedReader reader = new BufferedReader(new FileReader("entrada1.txt")); // cria o objeto reader para ler a entrada1.txt.
+            BufferedWriter writer = new BufferedWriter(new FileWriter("resultado1.txt")); // cria o objeto writer para escrever resultado2.txt.
             String l;
             ArrayList<Carro> garagemCarros = new ArrayList<Carro>(); // ArrayList que recebe os carros do arquivo entrada1.txt
 
-
+            // adiciona os objetos instanciados pelo arquivo entrada1.txt ao ArrayList garagemMotos.
             for (int i = 0; i < quantLinhas1; i++) {
                 l = reader.readLine();
                 if (l == null) break;
@@ -71,11 +72,13 @@ public class Principal {
         System.out.println(quantLinhas2);
 
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("entrada2.txt"));
-            BufferedWriter writer = new BufferedWriter(new FileWriter("resultado2.txt")); // Define uma pasta txt a ser criada
+            BufferedReader reader = new BufferedReader(new FileReader("entrada2.txt")); // cria o objeto reader para ler a entrada2.txt.
+            BufferedWriter writer = new BufferedWriter(new FileWriter("resultado2.txt")); // cria o objeto writer para escrever resultado2.txt.
             String linha;
-            ArrayList<Moto> garagemMotos = new ArrayList<Moto>();
-            for (int i = 0; i < quantLinhas2; i++) { // Refactor: mudar o limite do for para o len de entrada.txt #PROBLEMA = o programa precisaria descobrir qual é esportiva e qual é passeio(PESQUISAR PELA DOCUMENTAÇÃO DO READER)
+            ArrayList<Moto> garagemMotos = new ArrayList<Moto>(); // ArrayList que recebe os carros do arquivo entrada2.txt
+
+            // adiciona os objetos instanciados pelo arquivo entrada2.txt ao ArrayList garagemMotos.
+            for (int i = 0; i < quantLinhas2; i++) {
                 linha = reader.readLine();
                 if (linha == null) break;
                 ArrayList<String> info = new ArrayList<String>(Arrays.asList(linha.split(",")));
@@ -88,21 +91,21 @@ public class Principal {
                 }
             }
             System.out.println(garagemMotos);
-            int anoMoto0 = garagemMotos.get(0).getAno();
-            int anoMoto1 = garagemMotos.get(1).getAno();
-            int anoMoto2 = garagemMotos.get(2).getAno();
-            int anoMoto3 = garagemMotos.get(3).getAno();
+
+
+            // Escreve o algorítmo de anos das motos e maior anos das motos na pasta resultado2.txt
+            ArrayList<Integer> idadesMotos = new ArrayList<>();
+            for (int i = 0; i < quantLinhas2; i++) {
+                idadesMotos.add((garagemMotos.get(i).getAno()));
+                writer.write(String.format("Ano de fabricação da %dº moto: %d\n", (i+1), idadesMotos.get(i)));
+            }
             int maiorAno = 0;
-            for (int i = 0; i < 4; i++){
-                if (garagemMotos.get(i).getAno() > maiorAno) {
+            for (int i = 0; i < idadesMotos.size(); i++){
+                if (idadesMotos.get(i) > maiorAno) {
                     maiorAno = garagemMotos.get(i).getAno();
                 }
             }
-            writer.write(String.format("Ano de Fabricação da primeira moto: %d" +
-                    "\nAno de Fabricação da segunda moto: %d" +
-                    "\nAno de Fabricação da terceira moto: %d" +
-                    "\nAno de Fabricação da quarta moto: %d" +
-                    "\nAno de fabricação da moto mais nova: %d",anoMoto0, anoMoto1, anoMoto2, anoMoto3, maiorAno));// Escreve na pasta resultado2.txt
+            writer.write(String.format("Ano de fabricação da moto mais nova: %d", maiorAno));
             writer.close();
             reader.close();
         } catch (Exception e) {
