@@ -2,5 +2,4 @@ Ano de fabricação do 1º carro: 2020
 Ano de fabricação do 2º carro: 2021
 Ano de fabricação do 3º carro: 2001
 Ano de fabricação do 4º carro: 2005
-Ano de fabricação do 5º carro: 2018
-A média de idade dos carros é 2013
+Média de idade dos carros: 2011

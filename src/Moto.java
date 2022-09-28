@@ -3,7 +3,6 @@ public abstract class Moto {
     public int ano;
     public String cor;
 
-
     public Moto(String modelo, int ano, String cor) {
         this.modelo = modelo;
         this.ano = ano;

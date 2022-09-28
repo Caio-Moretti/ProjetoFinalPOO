@@ -1,5 +1,4 @@
-Esportivo,Ferrari Spider,2020,Amarela,Mercedes,3.0
-Esportivo,Lamborghini Gallardo,2021,Vermelha,Volkswagen,2.6
-Passeio,Siena,2001,Cinza,5
-Passeio,Gol,2005,Vermelha,5
-eSpOrTivo,Nissan GTR,2018,Preta,Nissan,3.6
+Esportivo, Ferrari Spider, 2020, Amarela, Mercedes, 3.0
+Esportivo, Lamborghini Gallardo, 2021, Vermelha, Volkswagen, 2.6
+Passeio, Siena, 2001, Cinza, 5
+Passeio, Gol, 2005, Vermelha, 5

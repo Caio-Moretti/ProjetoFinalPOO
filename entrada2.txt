@@ -1,5 +1,4 @@
-Esportiva,Kawasaki Ninja 400,2020,Verde,Cawu,2.0
-Esportiva,Ducati Panigale V4,2021,Vermelha,Cofap,2.0
-Passeio,Honda Pop 110i,2012,Preta,100
-Passeio,Yamaha Fazer 250,2010,Vermelha,120
-esportiva,Kawasaki XJZ,2020,Branca,Cofap,3.0
+Esportiva, Kawasaki Ninja, 2020, Verde, Cawu, 2.0
+Esportiva, Ducati Panigale V4, 2021, Vermelha, Cofap, 2.0
+Passeio, Honda Pop 110i, 2012, Preta, 100
+Passeio, Yamaha Fazer 250, 2010, Vermelha, 120
