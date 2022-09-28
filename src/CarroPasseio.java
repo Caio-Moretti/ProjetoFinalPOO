@@ -21,11 +21,11 @@ public class CarroPasseio extends Carro{
 
     @Override
     public String toString() {
-        return "Inner.CarroPasseio{ " +
+        return "\nCarroPasseio{ " +
                 "assentos='" + assentos + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", ano=" + ano +
                 ", cor='" + cor + '\'' +
-                '}';
+                "}";
     }
 }

@@ -1,11 +1,11 @@
 public class CarroEsportivo extends Carro implements Motor{
-    private final String marca_motor;
+    private final String marcaMotor;
     private double capacidade;
 
 
     public CarroEsportivo(String modelo, int ano, String cor, String marca_motor, double capacidade) {
         super(modelo, ano, cor);
-        this.marca_motor = marca_motor;
+        this.marcaMotor = marca_motor;
         this.capacidade = capacidade;
     }
 
@@ -23,7 +23,7 @@ public class CarroEsportivo extends Carro implements Motor{
 
     @Override
     public String getMarcaMotor() {
-        return marca_motor;
+        return marcaMotor;
     }
 
     @Override
@@ -33,12 +33,12 @@ public class CarroEsportivo extends Carro implements Motor{
 
     @Override
     public String toString() {
-        return "Inner.CarroEsportivo{ " +
-                "marca_motor='" + marca_motor + '\'' +
+        return "\nCarroEsportivo{ " +
+                "marca_motor='" + marcaMotor + '\'' +
                 ", capacidade=" + capacidade +
                 ", modelo='" + modelo + '\'' +
                 ", ano=" + ano +
                 ", cor='" + cor + '\'' +
-                '}';
+                "}";
     }
 }
