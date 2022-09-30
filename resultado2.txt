@@ -1,5 +1,5 @@
-Ano de fabricação da 1º moto: 2020
-Ano de fabricação da 2º moto: 2021
-Ano de fabricação da 3º moto: 2012
-Ano de fabricação da 4º moto: 2010
+Ano de fabricação da Kawasaki Ninja: 2020
+Ano de fabricação da Ducati Panigale V4: 2021
+Ano de fabricação da Honda Pop 110i: 2012
+Ano de fabricação da Yamaha Fazer 250: 2010
 Ano de fabricação da moto mais nova: 2021

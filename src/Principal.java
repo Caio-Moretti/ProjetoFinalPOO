@@ -6,8 +6,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Principal {
-    public static void main(String[] args) {
 
+    public static void setCapacidadeBySport(CarroEsportivo carroEsportivo, int capacidade) throws IllegalMotorException {
+        try {
+            carroEsportivo.setCapacidade(capacidade);
+        } catch(IllegalMotorException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void setAssentoBy(CarroPasseio carroPasseio, int assentos) throws IllegalSeatException {
+        try {
+            carroPasseio.setAssentos(assentos);
+        } catch(IllegalSeatException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("entrada1.txt")); // cria o objeto reader para ler a entrada1.txt.
             BufferedWriter writer = new BufferedWriter(new FileWriter("resultado1.txt")); // cria o objeto writer para escrever resultado2.txt.
@@ -37,7 +53,7 @@ public class Principal {
 
             for (int i = 0; i < quantLinhas1; i++) {
                 anosCarros.add((garagemCarros.get(i).getAno()));
-                writer.write(String.format("Ano de fabricação do %dº carro: %d\n", (i+1), anosCarros.get(i)));
+                writer.write(String.format("Ano de fabricação do(a) %s: %d\n", garagemCarros.get(i).modelo, anosCarros.get(i)));
             }
             int sum = 0;
             for (int i = 0; i < anosCarros.size(); i++) {
@@ -45,7 +61,7 @@ public class Principal {
             }
 
             int media = sum/anosCarros.size();
-            writer.write(String.format("Média de idade dos carros: %d", media));
+            writer.write(String.format("Média de ano dos carros: %d", media));
 
             writer.close();
             reader.close();
@@ -83,7 +99,7 @@ public class Principal {
             ArrayList<Integer> anosMotos = new ArrayList<>();
             for (int i = 0; i < quantLinhas2; i++) {
                 anosMotos.add((garagemMotos.get(i).getAno()));
-                writer.write(String.format("Ano de fabricação da %dº moto: %d\n", (i+1), anosMotos.get(i)));
+                writer.write(String.format("Ano de fabricação da %s: %d\n", garagemMotos.get(i).getModelo(), anosMotos.get(i)));
             }
             int maiorAno = 0;
             for (int i = 0; i < anosMotos.size(); i++){

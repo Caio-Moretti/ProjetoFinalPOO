@@ -10,10 +10,6 @@ public abstract class Carro {
         this.cor = cor;
     }
 
-    public void freiar(){
-        System.out.println("freiou");
-    }
-
     public String getModelo() {
         return modelo;
     }

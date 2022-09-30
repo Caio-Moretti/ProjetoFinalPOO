@@ -9,10 +9,6 @@ public class CarroEsportivo extends Carro implements Motor{
         this.capacidade = capacidade;
     }
 
-    public void freiar(){
-        System.out.println("freiou esportivamente");
-    }
-
     public void setCapacidade(double capacidade) throws IllegalMotorException {
         if(capacidade < 2.0) {
             throw new IllegalMotorException("Capacidade do motor nao e suficiente! :(");
